@@ -11,7 +11,7 @@ public class AFPacket4j {
     private native void callJniTest();
 
     private native int socket(int domain, int type);
-    private native int bind(int socket);
+    private native int bind(int socket, String ifname);
     private native int recv(int socket, byte[] arr);
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class AFPacket4j {
 
         int socket = af4j.socket(AF_PACKET, SOCK_RAW);
         System.out.println("Socket: " + socket);
-        int bindResult = af4j.bind(socket);
+        int bindResult = af4j.bind(socket, args[0]);
         System.out.println("Bind result: " + bindResult);
 		long start = System.currentTimeMillis();
 		long current = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class AFPacket4j {
 
 			bytes += result;
 			packets += 1;
-			
+			//System.out.println(byteArrayToHex(buffer, result));
 			current = System.currentTimeMillis();
 		}
 		long timeSecs = (current - start) / 1000; 

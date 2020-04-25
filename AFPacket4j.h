@@ -30,10 +30,10 @@ JNIEXPORT jint JNICALL Java_AFPacket4j_socket
 /*
  * Class:     AFPacket4j
  * Method:    bind
- * Signature: (I)I
+ * Signature: (ILjava/lang/String;)I
  */
 JNIEXPORT jint JNICALL Java_AFPacket4j_bind
-  (JNIEnv *, jobject, jint);
+  (JNIEnv *, jobject, jint, jstring);
 
 /*
  * Class:     AFPacket4j

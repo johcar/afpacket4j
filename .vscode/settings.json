@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "jni.h": "c",
+        "afpacket4j.h": "c",
+        "functional": "cpp"
+    }
+}
