@@ -10,15 +10,17 @@ public class AFPacket4j {
 
     private native void callJniTest();
 
-    private native int socket(int domain, int type);
+    private native int socket(int domain, int type, boolean ring);
     private native int bind(int socket, String ifname);
     private native int recv(int socket, byte[] arr);
+
+	private native int rxRing(int socket);
 
     public static void main(String[] args) {
         AFPacket4j af4j = new AFPacket4j();
         af4j.callJniTest();
 
-        int socket = af4j.socket(AF_PACKET, SOCK_RAW);
+        int socket = af4j.socket(AF_PACKET, SOCK_RAW, false);
         System.out.println("Socket: " + socket);
         int bindResult = af4j.bind(socket, args[0]);
         System.out.println("Bind result: " + bindResult);

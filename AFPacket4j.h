@@ -22,10 +22,10 @@ JNIEXPORT void JNICALL Java_AFPacket4j_callJniTest
 /*
  * Class:     AFPacket4j
  * Method:    socket
- * Signature: (II)I
+ * Signature: (IIZ)I
  */
 JNIEXPORT jint JNICALL Java_AFPacket4j_socket
-  (JNIEnv *, jobject, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jboolean);
 
 /*
  * Class:     AFPacket4j
@@ -42,6 +42,14 @@ JNIEXPORT jint JNICALL Java_AFPacket4j_bind
  */
 JNIEXPORT jint JNICALL Java_AFPacket4j_recv
   (JNIEnv *, jobject, jint, jbyteArray);
+
+/*
+ * Class:     AFPacket4j
+ * Method:    rxRing
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_AFPacket4j_rxRing
+  (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
 }
