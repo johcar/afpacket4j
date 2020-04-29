@@ -13,19 +13,19 @@ extern "C" {
 #define AFPacket4j_SOCK_RAW 3L
 /*
  * Class:     AFPacket4j
- * Method:    callJniTest
- * Signature: ()V
+ * Method:    init
+ * Signature: ()I
  */
-JNIEXPORT void JNICALL Java_AFPacket4j_callJniTest
+JNIEXPORT jint JNICALL Java_AFPacket4j_init
   (JNIEnv *, jobject);
 
 /*
  * Class:     AFPacket4j
  * Method:    socket
- * Signature: (IIZ)I
+ * Signature: (II)I
  */
 JNIEXPORT jint JNICALL Java_AFPacket4j_socket
-  (JNIEnv *, jobject, jint, jint, jboolean);
+  (JNIEnv *, jobject, jint, jint);
 
 /*
  * Class:     AFPacket4j
@@ -45,10 +45,10 @@ JNIEXPORT jint JNICALL Java_AFPacket4j_recv
 
 /*
  * Class:     AFPacket4j
- * Method:    rxRing
+ * Method:    rx_ring
  * Signature: (I)I
  */
-JNIEXPORT jint JNICALL Java_AFPacket4j_rxRing
+JNIEXPORT jint JNICALL Java_AFPacket4j_rx_1ring
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
